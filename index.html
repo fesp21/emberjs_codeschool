@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EmberJS_CodeSchool</title>
+  <script src="jquery-1.10.2.js"></script>
+  <script src="handlebars-1.1.2.js"></script>
+  <script src="ember-1.2.0.js"></script>
+  <script src="ember-data.js"></script>
+  <script src="app.js"></script>
+  <link rel="stylesheet" href="bootstrap.css" media="screen">
+</head>
+<body>
+  <script type="text/x-handlebars" data-template-name='application'>
+    <div class="navbar navbar-default">
+      <div class="container">
+        <ul class="nav navbar-nav navbar-right">
+          <li class='active'><a href='#/'>Home</a></li>
+          <li><a href='#/about'>About</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <h1>Welcome to {{siteName}}!</h1>
+    </div>
+    <footer class="container">
+      <hr />
+      <p class='pull-left'>&copy; 2013 The Flint &amp; Flame</p>
+      <p class='pull-right'><a href='#/credits'>Credits</a></p>
+    </footer>
+  </script>
+
+  <script type='text/x-handlebars' data-template-name='index'>
+    <h1>Welcome to The Flint &amp; Flame!</h1>
+  </script>
+  
+  <script type='text/x-handlebars' data-template-name='about'>
+    <h1>About The Fire Spirits</h1>
+  </script>
+  
+  
+</body>
+</html>
