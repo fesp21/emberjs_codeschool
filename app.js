@@ -6,11 +6,11 @@ App.Router.map(function(){
   this.route('about');
 
   this.resource('products', function() {
-    this.resource('product', { path: '/:title' });
+    this.resource('product', { path: '/:product_id' });
   });
   
   this.resource('contacts', function() {
-    this.resource('contact', { path: '/:name'});
+    this.resource('contact', { path: '/:contact_id'});
   });
 });
 
