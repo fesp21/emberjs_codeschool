@@ -11,8 +11,10 @@
   <link rel="stylesheet" href="bootstrap.css" media="screen">
 </head>
 <body>
+
   <!-- Main Template -->
   <script type="text/x-handlebars" data-template-name='application'>
+
     <div class="navbar navbar-default">
       <div class="container">
         <ul class="nav navbar-nav navbar-right">
@@ -21,16 +23,17 @@
         </ul>
       </div>
     </div>
-    // Templates Render Here
-    <div class="container">{{outlet}}</div>
+    <div class="container">{{outlet}}</div><!--templates render here-->
     <footer class="container">
       <hr />
       <p class='pull-left'>&copy; 2013 The Flint &amp; Flame</p>
       <p class='pull-right'><a href='#/credits'>Credits</a></p>
     </footer>
+
   </script>
-  
-  <!-- Different Templates to be rendered -->
+
+  <!-- Other templates -->
+  <!-- application automatically tries to find index template to render -->
   <script type='text/x-handlebars' data-template-name='index'>
     <h1>Welcome to The Flint &amp; Flame!</h1>
   </script>
