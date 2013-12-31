@@ -74,12 +74,13 @@ App.Product = DS.Model.extend({
   description: DS.attr('string'),
   isOnSale: DS.attr('boolean'),
   image: DS.attr('string'),
-  reviews: DS.hasMany('review', {async: true})
+  reviews: DS.hasMany('review', {async: true}) // lazy-loading
 });
 
 App.Review = DS.Model.extend({
   text: DS.attr('string'),
-  reviewedAt: DS.attr('date')
+  reviewedAt: DS.attr('date'),
+  product: DS.belongsTo('product')
 });
 
 App.Contact = DS.Model.extend({
