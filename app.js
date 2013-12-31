@@ -36,6 +36,12 @@ App.ProductsRoute = Ember.Route.extend({
   }
 });
 
+App.ProductRoute = Ember.Route.extend({
+  model: function(params) {
+    console.log(params);
+  }
+})
+
 App.ContactsRoute = Ember.Route.extend({
   model: function() {
     return App.CONTACTS;
@@ -48,26 +54,26 @@ App.PRODUCTS = [
     price: 99,
     description: 'Flint is a thing',
     isOnSale: true,
-    image: 'flint.png'
+    image: 'images/flint.jpg'
   },
   {
     title: 'Kindling',
     price: 249,
     description: 'Easily one of the best things',
     isOnSale: false,
-    image: 'kindling.png'
+    image: 'images/kindling.jpg'
   }
 ];
 
 App.CONTACTS = [
   {
     name: "Giamia",
-    avatar: "images/contacts/giamia.png",
+    avatar: "images/contacts/ryu.jpg",
     about: "SO COOL"
   },
   {
     name: "Anostagia",
-    avatar: "images/contacts/anostagia.png",
+    avatar: "images/contacts/cosby.jpg",
     about: "ALSO SO COOL"
   }
 ];
