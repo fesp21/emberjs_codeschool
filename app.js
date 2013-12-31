@@ -4,8 +4,10 @@ var App = Ember.Application.create({
 
 App.Router.map(function(){
   this.route('about');
-  this.resource('products');
-  this.resource('product', { path: '/products/:title' });
+  this.resource('products', function() {
+    this.resource('product', { path: '/:title' });
+  });
+  
   this.resource('contacts');
 });
 
@@ -38,7 +40,7 @@ App.ProductsRoute = Ember.Route.extend({
 
 App.ProductRoute = Ember.Route.extend({
   model: function(params) {
-    console.log(params);
+    return App.PRODUCTS.findBy('title', params.title);
   }
 })
 
