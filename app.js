@@ -4,7 +4,7 @@ var App = Ember.Application.create({
 
 App.Router.map(function(){
   this.route('about');
-  
+
   this.resource('products', function() {
     this.resource('product', { path: '/:title' });
   });
@@ -82,4 +82,32 @@ App.CONTACTS = [
     about: "ALSO SO COOL"
   }
 ];
+
+
+App.Product = DS.Model.extend({
+  title: DS.attr('string'),
+  price: DS.attr('number'),
+  description: DS.attr('string'),
+  isOnSale: DS.attr('boolean'),
+  image: DS.attr('string')
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
