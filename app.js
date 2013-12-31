@@ -37,7 +37,7 @@ App.AboutController = Ember.Controller.extend({
 
 App.ProductsRoute = Ember.Route.extend({
   model: function() {
-    return App.PRODUCTS;
+    return this.store.findAll('product');
   }
 });
 
@@ -49,7 +49,7 @@ App.ProductRoute = Ember.Route.extend({
 
 App.ContactsRoute = Ember.Route.extend({
   model: function() {
-    return App.CONTACTS;
+    return App.store.findAll('contact');
   }
 });
 
