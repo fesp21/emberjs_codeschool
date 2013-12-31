@@ -63,10 +63,20 @@
           <h2>{{title}}</h2>
           <p class='product-description'>{{description}}</p>
           <p><button class='btn btn-success'>Buy for ${{price}}</button></p>
+          {{#link-to 'product' this class='list-group-item' tagName='button'}}
+            {{title}}
+          {{/link-to}}
         </div>
       </li>
     {{/each}}
     </ul>
+  </script>
+
+  <script type='text/x-handlebars' data-template-name='product'>
+    <h2>{{title}}</h2>
+    <p>{{description}}</p>
+    <p>Buy for ${{price}}</p>
+
   </script>
 
   <script type='text/x-handlebars' data-template-name='contacts'>

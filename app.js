@@ -4,11 +4,14 @@ var App = Ember.Application.create({
 
 App.Router.map(function(){
   this.route('about');
+  
   this.resource('products', function() {
     this.resource('product', { path: '/:title' });
   });
   
-  this.resource('contacts');
+  this.resource('contacts', function() {
+    this.resource('contact', { path: '/:name'});
+  });
 });
 
 App.IndexController = Ember.Controller.extend({
