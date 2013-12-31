@@ -16,7 +16,7 @@ App.IndexController = Ember.Controller.extend({
 
 App.AboutController = Ember.Controller.extend({
   contactName: "Brian Han",
-  avatar: "images/gravatar.jpg",
+  gravatar: "images/gravatar.jpeg",
   open: function(){
     var day = new Date().getDay();
     if (day === 0) {
