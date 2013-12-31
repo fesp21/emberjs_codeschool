@@ -52,7 +52,7 @@ App.ProductsRoute = Ember.Route.extend({
 
 App.ContactsRoute = Ember.Route.extend({
   model: function() {
-    return App.store.findAll('contact');
+    return this.store.findAll('contact');
   }
 });
 
@@ -84,6 +84,8 @@ App.Contact = DS.Model.extend({
 
 
 //-----------[FIXTURES]----------------------------------//
+
+App.ApplicationAdapter = DS.FixtureAdapter.extend({});
 
 App.Product.FIXTURES = [
   { 
