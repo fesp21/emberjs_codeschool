@@ -113,6 +113,19 @@ App.Product.FIXTURES = [
   }
 ];
 
+App.Review.FIXTURES = [
+  {
+    id: 100, 
+    product: 1,
+    text: "Started a fire in no time!"
+  },
+  {
+    id: 101, 
+    product: 1,
+    text: "Not the brightest flame, but warm!"
+  }
+];
+
 App.Contact.FIXTURES = [
   {
     id: 1,
