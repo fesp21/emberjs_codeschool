@@ -13,3 +13,16 @@ App.IndexController = Ember.Controller.extend({
     return (new Date()).toDateString()
   }.property()
 });
+
+App.AboutController = Ember.Controller.extend({
+  contactName: "Brian Han",
+  avatar: "images/gravatar.jpg",
+  open: function(){
+    var day = new Date().getDay();
+    if (day === 0) {
+      return 'But we are closed for today...come back on Monday!';
+    } else {
+      return 'We are open!';
+    }
+  }.property()
+});
