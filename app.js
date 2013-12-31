@@ -8,5 +8,8 @@ App.Router.map(function(){
 
 App.IndexController = Ember.Controller.extend({
   productsCount: 6,
-  logo: 'images/logo.png'
+  logo: 'images/logo.png',
+  time: function(){
+    return (new Date()).toDateString()
+  }.property()
 });
