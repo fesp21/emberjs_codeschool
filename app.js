@@ -101,7 +101,8 @@ App.Product.FIXTURES = [
     price: 99,
     description: 'Flint is a thing',
     isOnSale: true,
-    image: 'images/flint.jpg'
+    image: 'images/flint.jpg',
+    reviews: [100, 101]
   },
   { 
     id: 2,
