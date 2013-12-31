@@ -5,6 +5,7 @@ var App = Ember.Application.create({
 App.Router.map(function(){
   this.route('about');
   this.resource('products');
+  this.resource('contacts');
 });
 
 App.IndexController = Ember.Controller.extend({
@@ -34,6 +35,12 @@ App.ProductsRoute = Ember.Route.extend({
   }
 });
 
+App.ContactsRoute = Ember.Route.extend({
+  model: function() {
+    return App.CONTACTS;
+  }
+});
+
 App.PRODUCTS = [
   {
     title: 'Flint',
@@ -50,3 +57,17 @@ App.PRODUCTS = [
     image: 'kindling.png'
   }
 ];
+
+App.CONTACTS = [
+  {
+    name: "Giamia",
+    avatar: "images/contacts/giamia.png",
+    about: "SO COOL"
+  },
+  {
+    name: "Anostagia",
+    avatar: "images/contacts/anostagia.png",
+    about: "ALSO SO COOL"
+  }
+];
+
