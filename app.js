@@ -2,6 +2,9 @@ var App = Ember.Application.create({
   LOG_TRANSITIONS: true
 });
 
+
+//-----------[ROUTER]----------------------------------//
+
 App.Router.map(function(){
   this.route('about');
 
@@ -13,6 +16,9 @@ App.Router.map(function(){
     this.resource('contact', { path: '/:contact_id'});
   });
 });
+
+
+//-----------[CONTROLLERS]----------------------------------//
 
 App.IndexController = Ember.Controller.extend({
   productsCount: 6,
@@ -35,23 +41,49 @@ App.AboutController = Ember.Controller.extend({
   }.property()
 });
 
+
+//-----------[ROUTES]----------------------------------//
+
 App.ProductsRoute = Ember.Route.extend({
   model: function() {
     return this.store.findAll('product');
   }
 });
 
-App.ProductRoute = Ember.Route.extend({
-  model: function(params) {
-    return App.PRODUCTS.findBy('title', params.title);
-  }
-})
-
 App.ContactsRoute = Ember.Route.extend({
   model: function() {
     return App.store.findAll('contact');
   }
 });
+
+// We can delete the ProductRoute code because 
+// Ember.js will do this by default
+
+// App.ProductRoute = Ember.Route.extend({
+//   model: function(params) {
+//     return this.store.find('product' params.product_id)
+//   }
+// });
+
+
+//-----------[MODELS]----------------------------------//
+
+App.Product = DS.Model.extend({
+  title: DS.attr('string'),
+  price: DS.attr('number'),
+  description: DS.attr('string'),
+  isOnSale: DS.attr('boolean'),
+  image: DS.attr('string')
+});
+
+App.Contact = DS.Model.extend({
+  name: DS.attr('string'),
+  avatar: DS.attr('string'),
+  about: DS.attr('string')
+});
+
+
+//-----------[FIXTURES]----------------------------------//
 
 App.Product.FIXTURES = [
   { 
@@ -72,27 +104,21 @@ App.Product.FIXTURES = [
   }
 ];
 
-App.CONTACTS = [
+App.Contact.FIXTURES = [
   {
+    id: 1,
     name: "Giamia",
     avatar: "images/contacts/ryu.jpg",
     about: "SO COOL"
   },
   {
+    id: 2,
     name: "Anostagia",
     avatar: "images/contacts/cosby.jpg",
     about: "ALSO SO COOL"
   }
 ];
 
-
-App.Product = DS.Model.extend({
-  title: DS.attr('string'),
-  price: DS.attr('number'),
-  description: DS.attr('string'),
-  isOnSale: DS.attr('boolean'),
-  image: DS.attr('string')
-});
 
 
 
