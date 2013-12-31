@@ -19,8 +19,8 @@
       <div class="container">
         <ul class="nav navbar-nav navbar-right">
           {{#link-to 'index' tagName='li'}}<a href='#'>Homepage</a>{{/link-to}}
-
           {{#link-to 'about' tagName='li'}}<a href='#'>About</a>{{/link-to}}
+          {{#link-to 'products' tagName='li'}}<a href='#'>Products</a>{{/link-to}}
         </ul>
       </div>
     </div>
@@ -53,7 +53,11 @@
   </script>
   
   <script type='text/x-handlebars' data-template-name='products'>
-
+    <h1>Products</h1>
+    {{#each product in model}}
+      <h2>{{product.title}}</h2>
+      <p>{{product.description}}</p>
+    {{/each}}
   </script>
   
 </body>
