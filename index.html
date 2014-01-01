@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>EmberJS_CodeSchool</title>
-  <script src="jquery-1.10.2.js"></script>
-  <script src="handlebars-1.1.2.js"></script>
-  <script src="ember-1.2.0.js"></script>
-  <script src="ember-data.js"></script>
-  <script src="app.js"></script>
-  <link rel="stylesheet" href="bootstrap.css" media="screen">
+  <script src="js/lib/jquery-1.10.2.js"></script>
+  <script src="js/lib/handlebars-1.1.2.js"></script>
+  <script src="js/lib/ember-1.2.0.js"></script>
+  <script src="js/lib/ember-data.js"></script>
+  <script src="js/app.js"></script>
+  <link rel="stylesheet" href="css/bootstrap.css" media="screen">
 </head>
 <body>
 
@@ -75,6 +75,17 @@
     <h2>{{title}}</h2>
     <p>{{description}}</p>
     <p>Buy for ${{price}}</p>
+
+    <h3>Reviews</h3>
+    <ul>
+      {{#each reviews}}
+        <li>{{text}}</li>
+      {{else}}
+        <li>
+          <em>No reviews yet. Be the first to write one!</em>
+        </li>
+      {{/each}}
+    </ul>
 
   </script>
 
